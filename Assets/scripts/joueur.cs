@@ -21,7 +21,8 @@ public class joueur : MonoBehaviour{
     }
 
     private void Update(){
-        if (Input.GetMouseButton(0)){
+        if (Input.touchCount > 0)
+        {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = new Vector3(mousePosition.x, -4.215f, 0);
             if (Time.time - LastActionTime >= period){
