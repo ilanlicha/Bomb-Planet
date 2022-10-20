@@ -33,9 +33,9 @@ public class joueur : MonoBehaviour{
 
     private void OnTriggerEnter2D(Collider2D collision){
         if (collision.gameObject.tag == "Ball"){
-            SceneManager.LoadScene(0);
-            PlayerPrefs.SetInt("level", 1);
             audio.Play();
+            PlayerPrefs.SetInt("level", 1);
+            SceneManager.LoadScene(0);
         }
     }
 }

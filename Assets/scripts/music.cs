@@ -22,8 +22,12 @@ public class music : MonoBehaviour
     }
 
     void Awake(){
-        filter = GetComponent<AudioLowPassFilter>();
         audio = GetComponent<AudioSource>();
+        filter = GetComponent<AudioLowPassFilter>();
+        if (PlayerPrefs.GetInt("music", 1) == 1)
+            audio.volume = 0.5f;
+        else if (PlayerPrefs.GetInt("music", 1) == 0)
+            audio.volume = 0f;
         if (!audio.isPlaying)
             audio.Play();
 
